@@ -412,4 +412,4 @@ function removeTripTask(id){ensureTripTasks();saved.tripTasks=saved.tripTasks.fi
 function addTripTask(){if(saved.type!=='trip')return;const input=document.getElementById('tripNewTask');const title=input.value.trim();if(!title){toast('Escribí el pendiente');return}ensureTripTasks();if(saved.tripTasks.length>=40){toast('Máximo 40 pendientes');return}saved.tripTasks.push({id:'task'+Date.now().toString(36)+Math.random().toString(36).slice(2,5),title,done:false});input.value='';persistJuntada();renderTripPlanner()}
 const v12Sync=sync;sync=function(){v12Sync();renderTripPlanner()};
 const v12Go=go;go=function(id){v12Go(id);if(id==='event')renderTripPlanner()};
-</script></body></html>
+</script><script type="module" src="./planazo-auth.js"></script></body></html>
